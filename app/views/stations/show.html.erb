@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<form>
+  <fieldset>
+    <legend>Nearest Station</legend>
+    <p>
+      <strong>Railway:</strong>
+      <%= @station.railway %>
+    </p>
+
+    <p>
+      <strong>Station:</strong>
+      <%= @station.station %>
+    </p>
+
+    <p>
+      <strong>Minutes:</strong>
+      <%= @station.minutes %>
+    </p>
+
+    <p>
+      <strong>Property:</strong>
+      <%= @station.property.property_name %>
+    </p>
+  </fieldset>
+</form>
+
+<%= link_to 'Edit', edit_station_path(@station) %> |
+<%= link_to 'Back', stations_path %>
