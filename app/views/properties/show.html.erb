@@ -1,0 +1,55 @@
+<form>
+  <fieldset>
+      <legend>Property Info</legend>
+      <p>
+        <strong>Property name:</strong>
+        <%= @property.property_name %>
+      </p>
+
+      <p>
+        <strong>Fees:</strong>
+        <%= @property.fees %>
+      </p>
+
+      <p>
+        <strong>Address:</strong>
+        <%= @property.address %>
+      </p>
+
+      <p>
+        <strong>Year:</strong>
+        <%= @property.year %>
+      </p>
+
+      <p>
+        <strong>Remark:</strong>
+        <%= @property.remark %>
+      </p>
+  </fieldset>
+  <fieldset>
+    <legend>Nearest Station</legend>
+    <% @property.stations.each.with_index(1) do |station, index| %>
+    <strong>Nearest Staion: <%= index %></strong>
+    <p>
+      <strong>Railway name:</strong>
+      <%= station.railway %>
+    </p>
+    <p>
+      <strong>Station name:</strong>
+      <%= station.station %>
+    </p>
+    <p>
+      <strong>Minutes To walk:</strong>
+      <%= pluralize(station.minutes, "minute") %>
+    </p>
+    <hr>
+    <% end %>
+  </fieldset>
+</form>
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
+
+
+
+
+

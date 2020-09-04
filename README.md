@@ -19,17 +19,17 @@ diver に掲載のテキストに書かれているものを使うこととし�
 - 最寄り駅情報は数を増やす可能性がありますので、考慮した実装をお願い致します。
 - テストコードの実装は不要です
 
-#### 一覧
-![index](https://cloud.githubusercontent.com/assets/1818925/20509523/91902df2-b0ac-11e6-9f3b-adce73dbedf8.png)
+#### List
+![index](app/assets/images/index.png)
 
-#### 閲覧
-![show](https://cloud.githubusercontent.com/assets/1818925/20509520/918d29ae-b0ac-11e6-8310-15474fcd5633.png)
+#### Browse
+![show](app/assets/images/show.png)
 
-#### 登録
-![new](https://cloud.githubusercontent.com/assets/1818925/20509522/918e87b8-b0ac-11e6-8f4b-5f8ba4945894.png)
+#### Registration
+![new](app/assets/images/new.png)
 
-#### 編集
-![edit](https://cloud.githubusercontent.com/assets/1818925/20509521/918df348-b0ac-11e6-8eef-6d2e7c833d9a.png)
+#### edit
+![edit](app/assets/images/edit.png)
 
 
 ## 注意事項

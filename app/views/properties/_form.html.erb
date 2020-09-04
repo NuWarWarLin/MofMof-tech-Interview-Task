@@ -1,0 +1,71 @@
+<%= form_for @property do |form| %>
+  <% if property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form>
+  <fieldset>
+    <legend>Property Info</legend>
+      <div class="field">
+      <%= form.label :property_name %>
+      <%= form.text_field :property_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :fees %>
+      <%= form.number_field :fees %> Yen
+    </div>
+
+    <div class="field">
+      <%= form.label :address %>
+      <%= form.text_area :address %>
+    </div>
+
+    <div class="field">
+      <%= form.label :year %>
+      <%= form.number_field :year %> years
+    </div>
+
+    <div class="field">
+      <%= form.label :remark %>
+      <%= form.text_area :remark %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Nearest Station</legend>
+      <div class="field">
+        <%= form.fields_for :stations do |f| %>
+          <%= render 'station_fields', f: f %>
+        <% end %>
+      <%= link_to_add_fields 'Add Stations', form, :stations %>
+      </div>
+    <hr>
+  </fieldset>
+    
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+</form>
+<% end %>
+
+<script>
+
+  $('form').on('click', '.add_fields', function(event){
+
+    console.log('clicked!')
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+    return event.preventDefault();
+  });
+
+</script>
